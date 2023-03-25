@@ -1,0 +1,457 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Roboto+Mono:wght@100;300;700&display=swap');
+
+/* 
+font-family: 'Roboto Condensed', sans-serif;
+font-family: 'Roboto Mono', monospace; 
+*/
+
+* {
+    box-sizing: border-box;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+body {
+    background-color: #212F45;
+    color: rgb(240, 240, 240);
+    height: 100vh;
+}
+
+.spacer {
+    aspect-ratio: 960/200;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.layer1 {
+    background-image: url(./Assets/layered-waves-haikei.svg);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.head-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    max-width: 400px;
+    height: 90%;
+}
+
+.head-title {
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.head-description {
+    font-family: 'Roboto Mono', monospace;
+    font-size: .8rem;
+    text-align: center;
+}
+
+
+.content {
+    display: grid; 
+    grid-template-columns: 0.1fr 1fr 1fr 0.1fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 5px; 
+    grid-template-areas: 
+        ". . . ."; 
+}
+
+.content .left {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content .left .title-candidate {
+    font-weight: lighter;
+    font-size: 2em;
+    width: 100%;
+}
+
+.content .left .card {
+    backdrop-filter: blur(10px);
+    height: 200px;
+    max-width: 500px;
+    aspect-ratio: 16/9;
+    width: 80%;
+    margin: 10px 0;
+    border-radius: 10px;
+    -webkit-box-shadow: 10px 10px 28px 0px rgba(0,0,0,0.11);
+    -moz-box-shadow: 10px 10px 28px 0px rgba(0,0,0,0.11);
+    box-shadow: 10px 10px 28px 0px rgba(0,0,0,0.11);
+
+    background-color: #1B3A4B;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(./Assets/zyro-image\ \(1\).png);
+    overflow: hidden;
+
+    cursor: pointer;
+}
+
+.content .left .card:hover .description {
+    margin-top: 0;
+    transition: all .3s ease;
+    transition: margin-top .3s ease;
+}
+
+.content .left .card .description {
+    background-color: rgba(255, 255, 255, 0.13);
+    backdrop-filter: blur(10px);
+
+    border-radius: 10px;
+    padding: 1em;
+    height: 100%;
+    margin-top: 130px;
+
+    transition: margin-top .3s ease
+}
+
+.content .left .card .description .c-name {
+    font-size: 1.5em;
+}
+
+.content .left .card .description .c-description {
+    margin-left: 1em;
+    margin-bottom: 1em;
+    font-size: .8em;
+}
+
+.content .left .card .description .social {
+    width: 80%;
+    height: 20%;
+    padding: 2rem;
+    margin-left: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.social1, .social2, .social3, .social4 {
+    aspect-ratio: 1/1;
+    height: 40px;
+    background-size: cover;
+}
+
+.content .left .card .description .social .social1 {
+    background-image: url(./Assets/icons8-linkedin-rodeado-de-círculo.svg);
+    
+}
+.content .left .card .description .social .social2 {
+    background-image: url(./Assets/icons8-github.svg);
+}
+.content .left .card .description .social .social3 {
+    background-image: url(./Assets/icons8-instagram.svg);
+}
+.content .left .card .description .social .social4 {
+    background-image: url(./Assets/icons8-portafolio-50.png);
+}
+
+.content .left .another {
+    font-size: .8em;
+    width: 80%;
+    text-align: right;
+    text-decoration: dashed;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.342);
+}
+
+.content .right {
+    grid-column: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+.content .right .gauge {
+    position: relative;
+    height: 200px;
+    width: 200px;
+}
+
+.content .right .progress {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: .1rem solid white;
+    border-bottom: .1rem solid rgba(8, 8, 8, 0);
+    border-radius: 50%;
+    outline: .2rem solid white;
+    outline-offset: .4rem;
+    overflow: hidden;
+}
+
+.content .right .progress::before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background-color: #212F45;
+    border-radius: 50%;
+    z-index: 200;
+}
+
+.content .right .progress::after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    width: 100%;
+    height: 50%;
+    background-color: #212F45;
+}
+
+.content .right .progress .startfirst {
+    position: absolute;
+    content: '';
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: 400;
+    transition: all .3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.startfirst.active {
+    opacity: 0;
+}
+
+.content .right .progress .startfirst span {
+    color: #212F45;
+    z-index: 401;
+    font-weight: bolder;
+    font-size: 3rem;
+}
+
+.content .right .bar {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: green;
+    transform: rotate(90deg);
+    transform-origin: center right;
+}
+
+.bar.active {
+    animation: rotate 5s ease-in-out;
+}
+
+.content .right .needle {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background-color: white!important;
+    clip-path: polygon(50% 0, 50% 0, 52% 100%, 48% 100%);
+    transform: rotate(90deg);
+    transform-origin: bottom center;
+    
+    z-index: 300;
+}
+
+.needle.active {
+    animation:  rotate 5s ease-in-out;
+}
+
+@keyframes rotate {
+    0% {
+        background-color: red;
+        transform: rotate(-90deg);
+    }
+    
+    50% {
+        background-color: yellow;
+        transform: rotate(0deg);
+    }
+    
+    80% {
+        background-color: rgb(255, 60, 0);
+        transform: rotate(-45deg);
+    }
+    
+    95% {
+        background-color: green;
+        transform: rotate(95deg);
+    }
+    
+    100% {
+        background-color:green;
+        transform: rotate(90deg);
+    }
+}
+
+.content .right .msg {
+    margin-top: 30px;
+    font-size: 1.3rem;
+}
+
+.content .right .msg .start-btn {
+    border-radius: .4rem;
+    padding: .8rem 1rem;
+    margin-top: 10px;
+    font-size: 1.3rem;
+    border: 1.5px solid white;
+    text-align: center;
+
+    cursor: pointer;
+    transition: .3s ease-out;
+}
+
+.start-btn.active {
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.process, .success {
+    border-radius: .4rem;
+    padding: .8rem 1rem;
+    transform: translateY(100px);
+    opacity: 0;
+    /* display: none; */
+    transition: .3s ease-out;
+}
+
+.process {
+    color: yellow;
+    border: 1.5px solid yellow;
+}
+
+.success {
+    color: rgb(20, 199, 20);
+    border: 1.5px solid rgb(20, 199, 20);
+}
+
+.process.active {
+    transform: translateY(-3rem);
+    opacity: 1;
+    /* display: block; */
+}
+.success.active {
+    transform: translateY(-6rem);
+    opacity: 1;
+    /* display: block; */
+}
+
+
+
+/* ---------------- POP UP --------------- */
+
+.bg {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.685);
+    z-index: 502;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    display: none;
+}
+
+.bg.active {
+    display: flex;
+}
+
+.popup {
+    /* position: fixed; */
+    max-width: 500px;
+    /*top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    aspect-ratio: 16/9;
+    background-color: rgb(221, 221, 221);
+    z-index: 503;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 20px;
+
+    background-image: url(./Assets/blob-scene-haikei\ \(1\).svg);
+    background-size: cover;
+    cursor: default;
+}
+
+.popup .message {
+    height: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.popup .message .congrats {
+    font-size: 2rem;
+    padding: .5rem;
+}
+
+.popup .message p {
+    font-size: 1rem;
+    padding: .5rem;
+    text-align: center;
+}
+
+.popup img {
+    height: 50%;
+    width: 40%;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.274);
+    margin: 20px;
+}
+
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+footer span {
+    font-weight: 100;
+    font-size: small;
+}
+
+
+/* Personalizar la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Personalizar el "pulgador" */
+::-webkit-scrollbar-thumb {
+    background-color: rgb(236, 235, 235);
+    border-radius: 8px;
+}
+  
